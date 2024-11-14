@@ -6,7 +6,7 @@ import { Product } from "../types/types";
 import useProducts from "../hooks/useProducts";
 
 const AddProductsForm = () => {
-  const { products } = useProducts();
+  const { createProduct } = useProducts();
   const {
     register,
     handleSubmit,
@@ -29,16 +29,12 @@ const AddProductsForm = () => {
     }
   };
 
-  const onSubmit = (data: Omit<Product, "id">) => {
-    const newProduct = {
-      ...data,
-      id: products ? Math.max(...products.map((p) => p.id)) + 1 : 1,
-      price: Number(data.price),
-    };
-
-    console.log("New product:", newProduct);
-    reset();
-    setSelectedImage(null);
+  const onSubmit = async (data: Omit<Product, "id">) => {
+    const success = await createProduct(data);
+    if (success) {
+      reset();
+      setSelectedImage(null);
+    }
   };
 
   return (

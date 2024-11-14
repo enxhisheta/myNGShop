@@ -7,28 +7,50 @@ const useProducts = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchProducts = async () => {
-      try {
-        const response = await fetch("/products.json");
-        const data: Product[] = await response.json();
-
-        if (!Array.isArray(data) || data.length === 0) {
-          throw new Error("No products found in the file.");
-        }
-
-        setProducts(data);
-      } catch (error) {
-        console.error("Error loading products:", (error as Error).message);
-        setError("Failed to load products. Please try again later.");
-      } finally {
-        setLoading(false);
-      }
-    };
-
     fetchProducts();
   }, []);
 
-  return { products, loading, error };
+  const fetchProducts = async () => {
+    try {
+      const response = await fetch("http://localhost:3001/products");
+      const data: Product[] = await response.json();
+      setProducts(data);
+    } catch (err) {
+      setError("Failed to load products");
+      console.error("Error loading products:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const createProduct = async (data: Omit<Product, "id">) => {
+    try {
+      const newProduct = {
+        ...data,
+        id: products ? Math.max(...products.map((p) => p.id)) + 1 : 1,
+        price: Number(data.price),
+      };
+
+      const response = await fetch("http://localhost:3001/products", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newProduct),
+      });
+
+      if (!response.ok) throw new Error("Failed to create product");
+
+      fetchProducts();
+      return true;
+    } catch (error) {
+      setError("Failed to create product");
+      console.error("Error creating product:", error);
+      return false;
+    }
+  };
+
+  return { products, loading, error, createProduct };
 };
 
 export default useProducts;
