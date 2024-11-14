@@ -42,6 +42,13 @@ export const lightTheme: Theme = createTheme({
         },
       },
     },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#f5f5f5",
+        },
+      },
+    },
   },
 });
 
@@ -73,6 +80,13 @@ export const darkTheme: Theme = createTheme({
         root: {
           backgroundColor: "#ffa2d8",
           color: "#ffffff",
+        },
+      },
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          backgroundColor: "#333",
         },
       },
     },
