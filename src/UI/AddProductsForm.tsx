@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Box, TextField, Button, Typography, Fab } from "@mui/material";
+import { Box, TextField, Button } from "@mui/material";
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 import { Product } from "../types/types";
 import useProducts from "../hooks/useProducts";
@@ -41,12 +41,8 @@ const AddProductsForm = () => {
     <Box
       component="form"
       onSubmit={handleSubmit(onSubmit)}
-      sx={{ maxWidth: 600, mx: "auto", p: 3 }}
+      className="add-products-form"
     >
-      <Typography variant="h5" gutterBottom>
-        Add New Product
-      </Typography>
-
       <input
         type="file"
         accept="image/*"
@@ -55,14 +51,10 @@ const AddProductsForm = () => {
         onChange={handleImageSelect}
       />
 
-      <Box sx={{ mb: 3, display: "flex", justifyContent: "center" }}>
+      <Box className="add-products-form-image">
         {selectedImage ? (
-          <Box sx={{ position: "relative", width: "100%", maxWidth: 300 }}>
-            <img
-              src={selectedImage}
-              alt="Selected"
-              style={{ width: "100%", height: "auto", borderRadius: "8px" }}
-            />
+          <Box className="add-products-form-preview">
+            <img src={selectedImage} alt="Selected" />
           </Box>
         ) : (
           <Button
@@ -112,15 +104,6 @@ const AddProductsForm = () => {
       <Button type="submit" variant="contained" fullWidth sx={{ mt: 3 }}>
         Add Product
       </Button>
-
-      <Fab
-        color="primary"
-        component="label"
-        htmlFor="image-upload"
-        sx={{ position: "fixed", bottom: 16, right: 16 }}
-      >
-        <AddPhotoAlternateIcon />
-      </Fab>
     </Box>
   );
 };

@@ -8,12 +8,6 @@
   --light-button-color: white;
   --light-header-background: rgba(0, 0, 0, 0.5);
   --light-header-sticky-background: rgba(0, 0, 0, 0.8);
-  --dark-color: rgba(255, 255, 255, 0.87);
-  --dark-background: #242424;
-  --dark-button-background: #ffa2d8;
-  --dark-button-color: white;
-  --dark-header-background: rgba(0, 0, 0, 0.5);
-  --dark-header-sticky-background: rgba(0, 0, 0, 0.8);
 }
 
 .layout {
@@ -40,30 +34,22 @@
   height: 80px;
   padding: 0;
 }
-
 .navbar-logo-container {
   display: flex;
   align-items: center;
   cursor: pointer;
-  height: 200px;
-  padding-top: 30px;
 }
 
 .navbar-logo {
-  height: 500px;
-  width: auto;
+  width: 250px;
+  height: auto;
   object-fit: contain;
+  padding-top: 30px;
 }
 
 @media (max-width: 600px) {
   .navbar-logo {
     width: 150px;
-  }
-}
-
-@media (min-width: 601px) {
-  .navbar-logo {
-    width: 200px;
   }
 }
 
@@ -268,12 +254,6 @@
   width: fit-content;
 }
 
-@media (max-width: 768px) {
-  .product-details {
-    grid-template-columns: 1fr;
-  }
-}
-
 .proceed-form {
   padding: 24px;
 }
@@ -323,4 +303,28 @@
 .order-confirmation {
   text-align: center;
   padding: 32px 0;
+}
+
+.add-products-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.add-products-form-image {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.add-products-form-preview {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+}
+
+.add-products-form-preview img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
