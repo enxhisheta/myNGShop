@@ -23,6 +23,7 @@ const ProceedForm = () => {
       component="form"
       onSubmit={handleSubmit(onSubmit)}
       className="proceed-form"
+      onClick={(e) => e.stopPropagation()}
     >
       <Typography variant="h5" gutterBottom>
         Personal Information

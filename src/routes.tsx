@@ -4,7 +4,7 @@ import ProductsPage from "./pages/ProductsPage";
 import ProductDetailsPage from "./pages/ProductDetailsPage";
 import CartSummaryPage from "./pages/CartSummaryPage";
 import CheckoutPage from "./pages/CheckoutPage";
-import OrderConfirmationPage from "./pages/OrderConfirmation";
+import OrderConfirmationPage from "./pages/OrderConfirmationPage";
 import HomePage from "./pages/Homepage";
 import NotFoundPage from "./pages/NotFoundPage";
 import AddProductsPage from "./pages/AddProductsPage";
