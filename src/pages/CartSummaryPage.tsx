@@ -5,7 +5,7 @@ const CartSummaryPage: React.FC = () => {
   return (
     <Container>
       <Typography variant="h4" className="page-title">
-        Your Shopping Cart
+        Shopping Cart
       </Typography>
       <CartSummary />
     </Container>

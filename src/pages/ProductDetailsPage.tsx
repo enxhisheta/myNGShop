@@ -4,7 +4,7 @@ import { Container, Typography, CircularProgress, Button } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import useProducts from "../hooks/useProducts";
 import ProductDetails from "../UI/ProductDetails";
-import { Product } from "../types/products";
+import { Product } from "../types/types";
 
 const ProductDetailsPage: React.FC = () => {
   const { productId } = useParams<{ productId: string }>();

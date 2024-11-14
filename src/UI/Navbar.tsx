@@ -14,6 +14,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import HomeIcon from "@mui/icons-material/Home";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import PersonIcon from "@mui/icons-material/Person";
 import PaymentIcon from "@mui/icons-material/Payment";
 import { useNavigate } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
@@ -31,6 +32,7 @@ const Navbar: React.FC = () => {
     { label: "Products", path: "/all-products", icon: <ShoppingBasketIcon /> },
     { label: "Cart", path: "/cart", icon: <ShoppingCartIcon /> },
     { label: "Checkout", path: "/checkout", icon: <PaymentIcon /> },
+    { label: "Admin", path: "/add-products", icon: <PersonIcon /> },
   ];
 
   const handleDrawerToggle = () => {
