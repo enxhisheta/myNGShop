@@ -1,6 +1,11 @@
 import { createContext, useState, useContext, ReactNode } from "react";
-import { Product } from "../types/types";
-import { CartItem, CartContextType } from "../types/types";
+import {
+  Product,
+  CartItem,
+  CartContextType,
+  PersonalInfo,
+  OrderData,
+} from "../types/types";
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
 
@@ -9,6 +14,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     const savedCart = localStorage.getItem("cart");
     return savedCart ? JSON.parse(savedCart) : [];
   });
+  const [orderData, setOrderData] = useState<OrderData | null>(null);
 
   const updateLocalStorage = (cart: CartItem[]) => {
     localStorage.setItem("cart", JSON.stringify(cart));
@@ -52,9 +58,36 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     });
   };
 
+  const createOrder = (personalInfo: PersonalInfo) => {
+    const totalAmount = cart.reduce(
+      (sum, item) => sum + item.price * item.quantity,
+      0
+    );
+    setOrderData({
+      personalInfo,
+      items: [...cart],
+      totalAmount,
+      orderDate: new Date(),
+      orderId: `ORD-${Date.now()}`,
+    });
+  };
+
+  const clearCart = () => {
+    setCart([]);
+    localStorage.removeItem("cart");
+  };
+
   return (
     <CartContext.Provider
-      value={{ cart, addToCart, removeFromCart, updateQuantity }}
+      value={{
+        cart,
+        orderData,
+        addToCart,
+        removeFromCart,
+        updateQuantity,
+        createOrder,
+        clearCart,
+      }}
     >
       {children}
     </CartContext.Provider>
