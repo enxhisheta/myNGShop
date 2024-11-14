@@ -2,9 +2,9 @@ import { createTheme, Theme } from "@mui/material/styles";
 
 const commonThemeSettings = {
   typography: {
-    fontFamily: "var(--font-family)",
-    lineHeight: "var(--line-height)",
-    fontWeight: "var(--font-weight)",
+    fontFamily: "Inter, system-ui, Avenir, Helvetica, Arial, sans-serif",
+    lineHeight: 1.5,
+    fontWeight: 400,
   },
   shape: {
     borderRadius: 8,
@@ -16,20 +16,20 @@ export const lightTheme: Theme = createTheme({
   palette: {
     mode: "light",
     background: {
-      default: "var(--light-background)",
+      default: "#f5f5f5",
       paper: "#ffffff",
     },
     text: {
-      primary: "var(--light-color)",
+      primary: "rgba(70, 70, 70, 0.87)",
     },
   },
   components: {
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: "var(--light-header-background)",
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
           "&.sticky": {
-            backgroundColor: "var(--light-header-sticky-background)",
+            backgroundColor: "rgba(0, 0, 0, 0.8)",
           },
         },
       },
@@ -37,8 +37,8 @@ export const lightTheme: Theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          backgroundColor: "var(--light-button-background)",
-          color: "var(--light-button-color)",
+          backgroundColor: "#1a1a1a",
+          color: "#ffffff",
         },
       },
     },
@@ -50,20 +50,20 @@ export const darkTheme: Theme = createTheme({
   palette: {
     mode: "dark",
     background: {
-      default: "var(--dark-background)",
-      paper: "#333",
+      default: "#242424",
+      paper: "#333333",
     },
     text: {
-      primary: "var(--dark-color)",
+      primary: "rgba(255, 255, 255, 0.87)",
     },
   },
   components: {
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: "var(--dark-header-background)",
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
           "&.sticky": {
-            backgroundColor: "var(--dark-header-sticky-background)",
+            backgroundColor: "rgba(0, 0, 0, 0.8)",
           },
         },
       },
@@ -71,8 +71,8 @@ export const darkTheme: Theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          backgroundColor: "var(--dark-button-background)",
-          color: "var(--dark-button-color)",
+          backgroundColor: "#646cff",
+          color: "#ffffff",
         },
       },
     },

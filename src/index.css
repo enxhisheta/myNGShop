@@ -93,3 +93,49 @@
 .theme-toggle {
   transition: color 0.3s ease;
 }
+
+/* Add these new styles */
+.products-container {
+  padding: 32px 0;
+}
+
+.products-loading {
+  display: flex;
+  justify-content: center;
+  padding: 32px 0;
+}
+
+.products-error {
+  padding: 32px 0;
+}
+
+.product-card {
+  max-width: 345px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card-media {
+  height: 200px;
+}
+
+.product-card-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.product-card-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+}

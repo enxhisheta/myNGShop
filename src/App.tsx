@@ -1,5 +1,5 @@
 import { ThemeProvider } from "./store/ThemeContext";
-import Layout from "./components/Layout";
+import Layout from "./UI/Layout";
 
 import AppRoutes from "./routes";
 
