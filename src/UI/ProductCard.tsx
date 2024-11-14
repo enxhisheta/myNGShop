@@ -10,6 +10,7 @@ import {
   Box,
 } from "@mui/material";
 import { Product } from "../types/products";
+import { useCart } from "../store/CartContext";
 
 interface ProductCardProps {
   product: Product;
@@ -18,13 +19,14 @@ interface ProductCardProps {
 const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
   const navigate = useNavigate();
+  const { addToCart } = useCart();
 
   const handleViewDetails = () => {
     navigate(`/products/${product.id}`);
   };
 
   const handleAddToCart = () => {
-    console.log("Added to cart:", product, "Quantity:", quantity);
+    addToCart(product, quantity);
   };
 
   return (

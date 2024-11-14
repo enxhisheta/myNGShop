@@ -17,6 +17,8 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PaymentIcon from "@mui/icons-material/Payment";
 import { useNavigate } from "react-router-dom";
 import ThemeToggle from "./ThemeToggle";
+import CartButton from "./CartButton";
+
 import logo from "../assets/logo/shopLogo2.png";
 
 const Navbar: React.FC = () => {
@@ -64,6 +66,7 @@ const Navbar: React.FC = () => {
 
           <Box className="navbar-actions">
             <ThemeToggle />
+            <CartButton />
             <IconButton
               color="inherit"
               aria-label="menu"
