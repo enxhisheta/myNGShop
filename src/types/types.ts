@@ -1,10 +1,11 @@
 export interface Product {
-  id: number;
+  id: string;
   name: string;
   imageSrc: string;
   description: string;
   price: number;
 }
+
 export interface ThemeContextType {
   darkTheme: boolean;
   toggleTheme: () => void;

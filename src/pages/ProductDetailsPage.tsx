@@ -9,34 +9,31 @@ import { Product } from "../types/types";
 const ProductDetailsPage: React.FC = () => {
   const { productId } = useParams<{ productId: string }>();
   const navigate = useNavigate();
-  const { products, loading, error } = useProducts();
+  const { loading, error, fetchProductById } = useProducts();
   const [product, setProduct] = useState<Product | null>(null);
 
-  useEffect(() => {
-    if (products) {
-      const foundProduct = products.find((p) => p.id === Number(productId));
-      if (foundProduct) {
-        setProduct(foundProduct);
-      }
-    }
-  }, [products, productId]);
-
   // useEffect(() => {
-  //   const loadProduct = async () => {
-  //     try {
-  //       if (!productId) return;
-  //       const productData = await fetchProductById(Number(productId));
-  //       setProduct(productData);
-  //     } catch (error) {
-  //       setError("Product not found");
-  //       throw error;
-  //     } finally {
-  //       setLoading(false);
+  //   if (products && productId) {
+  //     const foundProduct = products.find((p) => p.id === productId);
+  //     if (foundProduct) {
+  //       setProduct(foundProduct);
   //     }
-  //   };
+  //   }
+  // }, [products, productId]);
 
-  //   loadProduct();
-  // }, [productId, fetchProductById, navigate]);
+  useEffect(() => {
+    const loadProduct = async () => {
+      try {
+        if (!productId) return;
+        const productData = await fetchProductById(String(productId));
+        setProduct(productData);
+      } catch (error) {
+        console.error("Product not found");
+        throw error;
+      }
+    };
+    loadProduct();
+  }, [productId, fetchProductById, navigate]);
 
   return (
     <Container className="product-details-page">

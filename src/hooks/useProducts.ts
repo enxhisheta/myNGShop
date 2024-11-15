@@ -23,25 +23,27 @@ const useProducts = () => {
     }
   };
 
-  // const fetchProductById = async (id: number) => {
-  //   try {
-  //     const response = await fetch(`http://localhost:3001/products/${id}`);
-  //     if (!response.ok) {
-  //       throw new Error(`Product with ID ${id} not found`);
-  //     }
-  //     const data: Product = await response.json();
-  //     return data;
-  //   } catch (error) {
-  //     setError("Failed to load product");
-  //     throw error;
-  //   }
-  // };
+  const fetchProductById = async (id: string) => {
+    try {
+      const response = await fetch(`http://localhost:3001/products/${id}`);
+      if (!response.ok) {
+        throw new Error(`Product with ID ${id} not found`);
+      }
+      const data: Product = await response.json();
+      return data;
+    } catch (error) {
+      setError("Failed to load product");
+      throw error;
+    }
+  };
 
   const createProduct = async (data: Omit<Product, "id">) => {
     try {
       const newProduct = {
         ...data,
-        id: products ? Math.max(...products.map((p) => p.id)) + 1 : 1,
+        id: products
+          ? String(Math.max(...products.map((p) => Number(p.id))) + 1)
+          : "1",
         price: Number(data.price),
       };
 
@@ -64,7 +66,7 @@ const useProducts = () => {
     }
   };
 
-  return { products, loading, error, createProduct };
+  return { products, loading, error, createProduct, fetchProductById };
 };
 
 export default useProducts;

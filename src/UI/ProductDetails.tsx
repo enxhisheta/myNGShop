@@ -15,11 +15,19 @@ const ProductDetails: React.FC<ProductDetailsProps> = ({ product }) => {
     addToCart(product, quantity);
   };
 
+  const isBase64Image = (src: string) => src.startsWith("data:image");
+
+  const getImageSrc = (imageSrc: string) => {
+    return isBase64Image(imageSrc)
+      ? imageSrc
+      : `/images/${imageSrc.split("/").pop()}`;
+  };
+
   return (
     <Box className="product-details">
       <Box
         component="img"
-        src={product.imageSrc}
+        src={getImageSrc(product.imageSrc)}
         alt={product.name}
         className="product-details-image"
       />

@@ -42,7 +42,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
 
   const removeFromCart = (id: number) => {
     setCart((prevCart) => {
-      const updatedCart = prevCart.filter((item) => item.id !== id);
+      const updatedCart = prevCart.filter((item) => item.id !== id.toString());
       updateLocalStorage(updatedCart);
       return updatedCart;
     });
@@ -51,7 +51,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   const updateQuantity = (id: number, quantity: number) => {
     setCart((prevCart) => {
       const updatedCart = prevCart.map((item) =>
-        item.id === id ? { ...item, quantity } : item
+        item.id === id.toString() ? { ...item, quantity } : item
       );
       updateLocalStorage(updatedCart);
       return updatedCart;
@@ -93,7 +93,6 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     </CartContext.Provider>
   );
 };
-
 // eslint-disable-next-line react-refresh/only-export-components
 export const useCart = () => {
   const context = useContext(CartContext);

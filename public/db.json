@@ -1,58 +1,58 @@
 {
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Wireless Bluetooth Headphones A",
-      "imageSrc": "./images/headphones.jpg",
+      "imageSrc": "./images/headphones1.jpg",
       "description": "High-quality wireless Bluetooth headphones with noise cancellation and 20 hours of battery life.",
       "price": 300
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Wireless Bluetooth Headphones B",
-      "imageSrc": "./images/headphones.jpg",
+      "imageSrc": "./images/headphones2.jpg",
       "description": "High-quality wireless Bluetooth headphones with noise cancellation and 20 hours of battery life.",
       "price": 300
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Wireless Bluetooth Headphones C",
-      "imageSrc": "./images/headphones.jpg",
+      "imageSrc": "./images/headphones3.jpg",
       "description": "High-quality wireless Bluetooth headphones with noise cancellation and 20 hours of battery life.",
       "price": 300
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Wireless Bluetooth Headphones D",
-      "imageSrc": "./images/headphones.jpg",
+      "imageSrc": "./images/headphones4.jpg",
       "description": "High-quality wireless Bluetooth headphones with noise cancellation and 20 hours of battery life.",
       "price": 300
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Wireless Bluetooth Headphones E",
-      "imageSrc": "./images/headphones.jpg",
+      "imageSrc": "./images/headphones5.jpg",
       "description": "High-quality wireless Bluetooth headphones with noise cancellation and 20 hours of battery life.",
       "price": 300
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Wireless Bluetooth Headphones F",
-      "imageSrc": "./images/headphones.jpg",
+      "imageSrc": "./images/headphones6.jpg",
       "description": "High-quality wireless Bluetooth headphones with noise cancellation and 20 hours of battery life.",
       "price": 300
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Wireless Bluetooth Headphones G",
-      "imageSrc": "./images/headphones.jpg",
+      "imageSrc": "./images/headphones7.jpg",
       "description": "High-quality wireless Bluetooth headphones with noise cancellation and 20 hours of battery life.",
       "price": 300
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Wireless Bluetooth Headphones H",
-      "imageSrc": "./images/headphones.jpg",
+      "imageSrc": "./images/headphones8.jpg",
       "description": "High-quality wireless Bluetooth headphones with noise cancellation and 20 hours of battery life.",
       "price": 300
     }
