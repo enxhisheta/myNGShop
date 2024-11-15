@@ -1,6 +1,9 @@
-import { Container, Typography, Grid, Box } from "@mui/material";
 import ProceedForm from "../UI/ProceedForm";
 import CartSummary from "../UI/CartSummary";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
 
 const CheckoutPage: React.FC = () => {
   return (

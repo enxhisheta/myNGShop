@@ -1,7 +1,8 @@
-import { IconButton, Badge } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../store/CartContext";
+import IconButton from "@mui/material/IconButton";
+import Badge from "@mui/material/Badge";
 
 const CartButton: React.FC = () => {
   const { cart } = useCart();

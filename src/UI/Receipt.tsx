@@ -1,5 +1,8 @@
-import { Box, Typography, Divider, Paper } from "@mui/material";
+import Paper from "@mui/material/Paper";
 import { useCart } from "../store/CartContext";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Divider from "@mui/material/Divider";
 
 const Receipt: React.FC = () => {
   const { orderData } = useCart();

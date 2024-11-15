@@ -1,4 +1,5 @@
-import { Container, Typography } from "@mui/material";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
 import AddProductsForm from "../UI/AddProductsForm";
 
 const AddProductsPage: React.FC = () => {

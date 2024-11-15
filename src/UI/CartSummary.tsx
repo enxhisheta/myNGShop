@@ -1,7 +1,11 @@
-import { Box, Typography, TextField, Button, IconButton } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useCart } from "../store/CartContext";
 import { useNavigate } from "react-router-dom";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import TextField from "@mui/material/TextField";
+import IconButton from "@mui/material/IconButton";
+import Button from "@mui/material/Button";
 
 const CartSummary = () => {
   const { cart, removeFromCart, updateQuantity } = useCart();
@@ -35,7 +39,7 @@ const CartSummary = () => {
                 inputProps={{ min: 1 }}
                 value={item.quantity}
                 onChange={(e) =>
-                  updateQuantity(item.id, Number(e.target.value))
+                  updateQuantity(item.id, parseInt(e.target.value, 10))
                 }
                 className="cart-item-quantity"
               />

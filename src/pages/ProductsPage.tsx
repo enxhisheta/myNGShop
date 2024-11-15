@@ -1,6 +1,8 @@
-import { Container, Typography, CircularProgress } from "@mui/material";
+import Container from "@mui/material/Container";
 import useProducts from "../hooks/useProducts";
 import ProductCard from "../UI/ProductCard";
+import CircularProgress from "@mui/material/CircularProgress";
+import Typography from "@mui/material/Typography";
 
 const ProductsPage: React.FC = () => {
   const { products, loading, error } = useProducts();

@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
-import {
-  Container,
-  Typography,
-  Button,
-  Box,
-  Snackbar,
-  Alert,
-} from "@mui/material";
+
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../store/CartContext";
 import Receipt from "../UI/Receipt";
+import Container from "@mui/material/Container";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import Snackbar from "@mui/material/Snackbar";
+import Alert from "@mui/material/Alert";
 
 const OrderConfirmationPage: React.FC = () => {
   const { orderData, clearCart } = useCart();

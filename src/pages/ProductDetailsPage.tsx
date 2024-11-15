@@ -1,25 +1,19 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Container, Typography, CircularProgress, Button } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import useProducts from "../hooks/useProducts";
 import ProductDetails from "../UI/ProductDetails";
 import { Product } from "../types/types";
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
+import CircularProgress from "@mui/material/CircularProgress";
+import Typography from "@mui/material/Typography";
 
 const ProductDetailsPage: React.FC = () => {
   const { productId } = useParams<{ productId: string }>();
   const navigate = useNavigate();
   const { loading, error, fetchProductById } = useProducts();
   const [product, setProduct] = useState<Product | null>(null);
-
-  // useEffect(() => {
-  //   if (products && productId) {
-  //     const foundProduct = products.find((p) => p.id === productId);
-  //     if (foundProduct) {
-  //       setProduct(foundProduct);
-  //     }
-  //   }
-  // }, [products, productId]);
 
   useEffect(() => {
     const loadProduct = async () => {

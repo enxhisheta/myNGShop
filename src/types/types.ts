@@ -18,8 +18,8 @@ export interface CartContextType {
   cart: CartItem[];
   orderData: OrderData | null;
   addToCart: (product: Product, quantity: number) => void;
-  removeFromCart: (id: number) => void;
-  updateQuantity: (id: number, quantity: number) => void;
+  removeFromCart: (id: string) => void;
+  updateQuantity: (id: string, quantity: number) => void;
   createOrder: (personalInfo: PersonalInfo) => void;
   clearCart: () => void;
 }

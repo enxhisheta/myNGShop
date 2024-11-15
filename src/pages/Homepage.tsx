@@ -1,4 +1,8 @@
-import { Box, Typography, Container, Grid, Button } from "@mui/material";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 import { useNavigate } from "react-router-dom";
 
 const HomePage: React.FC = () => {

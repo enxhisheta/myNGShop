@@ -1,5 +1,6 @@
-import { Container, Typography } from "@mui/material";
+import Container from "@mui/material/Container";
 import CartSummary from "../UI/CartSummary";
+import Typography from "@mui/material/Typography";
 
 const CartSummaryPage: React.FC = () => {
   return (

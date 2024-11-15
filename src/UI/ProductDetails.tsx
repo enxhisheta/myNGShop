@@ -1,7 +1,10 @@
 import { useState } from "react";
-import { Box, Typography, TextField, Button } from "@mui/material";
 import { useCart } from "../store/CartContext";
 import { Product } from "../types/types";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
 
 interface ProductDetailsProps {
   product: Product;
