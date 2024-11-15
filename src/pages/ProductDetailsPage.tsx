@@ -21,6 +21,23 @@ const ProductDetailsPage: React.FC = () => {
     }
   }, [products, productId]);
 
+  // useEffect(() => {
+  //   const loadProduct = async () => {
+  //     try {
+  //       if (!productId) return;
+  //       const productData = await fetchProductById(Number(productId));
+  //       setProduct(productData);
+  //     } catch (error) {
+  //       setError("Product not found");
+  //       throw error;
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   };
+
+  //   loadProduct();
+  // }, [productId, fetchProductById, navigate]);
+
   return (
     <Container className="product-details-page">
       <Button

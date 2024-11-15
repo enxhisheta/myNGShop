@@ -23,6 +23,20 @@ const useProducts = () => {
     }
   };
 
+  // const fetchProductById = async (id: number) => {
+  //   try {
+  //     const response = await fetch(`http://localhost:3001/products/${id}`);
+  //     if (!response.ok) {
+  //       throw new Error(`Product with ID ${id} not found`);
+  //     }
+  //     const data: Product = await response.json();
+  //     return data;
+  //   } catch (error) {
+  //     setError("Failed to load product");
+  //     throw error;
+  //   }
+  // };
+
   const createProduct = async (data: Omit<Product, "id">) => {
     try {
       const newProduct = {
